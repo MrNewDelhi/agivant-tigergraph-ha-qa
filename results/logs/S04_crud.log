@@ -1,0 +1,11 @@
+# CRUD lifecycle via RESTPP API (regenerated live) — matches S04_crud_api.png
+$ CREATE demo1 balance=1000
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"accepted_vertices":1,"accepted_edges":0}],"code":"REST-0001"}
+$ READ demo1
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"v_id":"demo1","v_type":"Account","attributes":{"id":"demo1","balance":1000}}]}
+$ UPDATE demo1 -> 2500 ; READ
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"v_id":"demo1","v_type":"Account","attributes":{"id":"demo1","balance":2500}}]}
+$ DELETE demo1
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":{"v_type":"Account","deleted_vertices":1}}
+$ READ demo1 (expect clean error — gone)
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"The input vertex id 'demo1' is not a valid vertex id for vertex type = Account.","code":"601"}

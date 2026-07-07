@@ -1,0 +1,11 @@
+// Graph schema for the HA test. A small financial graph: Person -OWNS-> Account -TRANSFER-> Account.
+// Run:  gsql data/schema.gsql
+// Verify in gsql:  ls   (should show the graph, vertices, edges)
+
+CREATE VERTEX Person  (PRIMARY_ID id STRING, name STRING)   WITH PRIMARY_ID_AS_ATTRIBUTE="true"
+CREATE VERTEX Account (PRIMARY_ID id STRING, balance DOUBLE) WITH PRIMARY_ID_AS_ATTRIBUTE="true"
+
+CREATE UNDIRECTED EDGE OWNS     (FROM Person,  TO Account)
+CREATE DIRECTED   EDGE TRANSFER (FROM Account, TO Account, amount DOUBLE)
+
+CREATE GRAPH finGraph(Person, Account, OWNS, TRANSFER)

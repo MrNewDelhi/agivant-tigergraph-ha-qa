@@ -1,0 +1,44 @@
+
+=== MESSY / EDGE-CASE DATA TESTS ===
+[PASS] MD1  unicode + emoji name round-trip
+        expected = 'José García 日本語 Ω 😀'
+        actual   = 'José García 日本語 Ω 😀'
+[PASS] MD2  special characters preserved (no injection/loss)
+        expected = 'O\'Brien, "Bob" <script> & Co.'
+        actual   = 'O\'Brien, "Bob" <script> & Co.'
+[PASS] MD3  very large balance stored exactly
+        expected = 999999999999.99
+        actual   = 999999999999.99
+[PASS] MD4  negative balance stored exactly
+        expected = -500.25
+        actual   = -500.25
+[PASS] MD5  zero balance stored exactly
+        expected = 0
+        actual   = 0
+[PASS] MD6  very small balance stored exactly
+        expected = 1e-08
+        actual   = 1e-08
+[PASS] MD7  duplicate primary-id dedups (last value wins)
+        expected = 200.0
+        actual   = 200
+[PASS] MD8  empty-string name handled (round-trips as empty)
+        expected = ''
+        actual   = ''
+[PASS] MD9  whitespace-only name preserved (not trimmed to loss)
+        expected = '   '
+        actual   = '   '
+[PASS] MD10 long (500-char) name stored intact
+        expected = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+        actual   = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+
+=== LARGER DATA — bulk insert 5,000 vertices, verify all landed ===
+[PASS] MD11 bulk insert — spot-checked 4/4 sample vertices present
+        expected = 4
+        actual   = 4
+[PASS] MD12 bulk value integrity — bulk4999 has balance 4999
+        expected = 4999
+        actual   = 4999
+
+=== SUMMARY:  12 passed, 0 failed   (total 12) ===
+
+SUMMARY: 12 passed, 0 failed

@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Secrets & credentials — never commit
+license.txt
+license_ha.txt
+install_conf.json
+infra/cluster.env
+
+# Large binaries / archives
+*.tar.gz
+
+# Local tooling & scratch (not part of the deliverable)
+.playwright-mcp/
+capture/
+results/logs/capture_*.log
+wiki/
+docs/runsheet.html
+
+# NOTE: results/*.csv and results/screenshots/ ARE committed on purpose —
+# they are the test evidence (contain no secrets).
+
+# macOS
+.DS_Store

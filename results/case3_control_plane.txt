@@ -1,0 +1,76 @@
+Case 3 — Control-plane operations while the cluster is degraded (one node down)
+================================================================================
+Method: powered off m3 (true node-down), then attempted each operation from a
+surviving node (m1). This case is command-based (not probe-based), so the
+evidence is captured terminal output rather than a probe CSV.
+
+Cluster state during the test: m3 down (GSQL#3, RESTPP#3 = StatusUnknown);
+GPE_1#1/#2, GSQL#1/#2, RESTPP#1/#2 = Online.
+
+--------------------------------------------------------------------------------
+############ DEGRADED CLUSTER (m3 down) — control-plane ops ############
+
+===== [A] INTERPRETED QUERY (positive control — should WORK) =====
+      "\"interpreted-ok\"": "interpreted-ok"
+    }
+  ]
+}
+
+===== [B] EXISTING INSTALLED QUERY via REST (should WORK) =====
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"S":[{"v_id":"acc0","v_type":"Account","attributes":{ ... }}]}]}
+
+===== [C] CREATE QUERY (catalog metadata — may work) =====
+Successfully created queries: [case3probe].
+
+===== [D] INSTALL QUERY (expected BLOCKED while degraded) =====
+Start installing queries, about 1 minute ...
+case3probe query: curl -X GET 'http://10.128.0.2:14240/restpp/query/finGraph/case3probe'. ...
+   ^ CLI printed a success-looking endpoint hint — but see the VERIFY step below.
+
+===== [E] SCHEMA CHANGE (expected BLOCKED while degraded) =====
+CREATE GLOBAL SCHEMA_CHANGE JOB c3job { ADD VERTEX Bank (PRIMARY_ID id STRING); }
+RUN GLOBAL SCHEMA_CHANGE JOB c3job
+  -> Other operation is running, try to lock the catalog, timeout in 600 seconds ...
+
+--------------------------------------------------------------------------------
+VERIFY — did INSTALL QUERY actually succeed? (this overturned the first read)
+--------------------------------------------------------------------------------
+$ curl .../query/finGraph/case3probe
+{"version":{...},"error":true,"message":"Endpoint is not found from url =
+ /query/finGraph/case3probe, please use GET /e..."}
+
+$ gsql -g finGraph "ls"   (queries section)
+Queries:
+  - case3probe() (pendingInstall)      <-- NOT installed; stuck pending
+
+=> INSTALL QUERY is effectively BLOCKED while a node is down: the compiled query
+   cannot be deployed to the down node, so it never completes (state = pendingInstall,
+   REST endpoint = "not found"). The CLI's success-looking output was misleading —
+   only verifying the actual endpoint/state revealed the true (documented) behaviour.
+
+--------------------------------------------------------------------------------
+RECOVERY — bring m3 back and time how fast the blocked op un-blocks
+--------------------------------------------------------------------------------
+=== bring m3 services back ===
+CLUSTER_HEALED after ~32s
+
+=== retry INSTALL QUERY (should succeed once healthy) ===
+contribution of node 'm1': 66.7%
+contribution of node 'm2': 33.3%
+contribution of node 'm3': 0.0%
+Query installation finished.
+install retry took 54s
+
+=== verify endpoint now works ===
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"\"hi\"":"hi"}]}
+
+--------------------------------------------------------------------------------
+RESULT
+--------------------------------------------------------------------------------
+While degraded:  interpreted queries + existing installed queries + reads  = WORK
+                 INSTALL QUERY, schema change                              = BLOCKED (by design)
+After recovery:  cluster healed ~32s; INSTALL QUERY completed ~54s; endpoint live.
+
+Finding: HA is partial by design — the data plane keeps serving while catalog-
+mutating control-plane operations are blocked until full cluster membership is
+restored. Correct product behaviour, not a bug. (See docs/REPORT.md §4, Case 3.)

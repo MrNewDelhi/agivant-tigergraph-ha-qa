@@ -1,0 +1,14 @@
+###### INSTALL QUERY blocked while degraded — real captured evidence ######
+Date: Mon Jul  6 22:23:35 IST 2026
+== stop node m3 to degrade the cluster ==
+m3 stopped. Now attempt CREATE + INSTALL QUERY from m1:
+--- CREATE QUERY (catalog metadata) ---
+Successfully created queries: [evidenceProbe].
+--- INSTALL QUERY (should not complete with a node down) ---
+Start installing queries, about 1 minute ...
+evidenceProbe query: curl -X GET 'http://10.128.0.2:14240/restpp/query/finGraph/evidenceProbe'. Add -H "Authorization: Bearer TOKEN" if authentication is enabled.
+--- gsql ls: query state (expect pendingInstall) ---
+  - evidenceProbe() (pendingInstall)
+  - ftAgg() (installed v2)
+--- REST endpoint check (expect 'Endpoint is not found') ---
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/finGraph/evidenceProbe, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"

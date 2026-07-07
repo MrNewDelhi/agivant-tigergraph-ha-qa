@@ -1,0 +1,16 @@
+###### GSQL LEADER FAILOVER — real log lines (GsqlHAHandler) ######
+----- node 10.128.0.2 -----
+Warning: Permanently added '10.128.0.2' (ED25519) to the list of known hosts.
+I@20260706 16:51:41.623  (GsqlHAHandler.java:85) Initialize GsqlHAHandler
+I@20260706 16:51:42.377  (GsqlHAHandler.java:292) GSQL leader switches from 'm1' to 'm3' ...
+E@20260706 16:51:42.378  (GsqlHAHandler.java:307) GSQL HA leader switches to 'm3', abort and clear all sessions now.
+I@20260706 16:51:42.389  (GsqlHAHandler.java:328) switched to new leader: m3
+----- node 10.128.0.3 -----
+Warning: Permanently added '10.128.0.3' (ED25519) to the list of known hosts.
+I@20260706 16:51:39.883  (GsqlHAHandler.java:85) Initialize GsqlHAHandler
+I@20260706 16:51:40.288  (GsqlHAHandler.java:292) GSQL leader switches from 'm2' to 'm3' ...
+E@20260706 16:51:40.294  (GsqlHAHandler.java:307) GSQL HA leader switches to 'm3', abort and clear all sessions now.
+I@20260706 16:51:40.314  (GsqlHAHandler.java:328) switched to new leader: m3
+----- node 10.128.0.4 -----
+Warning: Permanently added '10.128.0.4' (ED25519) to the list of known hosts.
+I@20260706 16:51:38.866  (GsqlHAHandler.java:85) Initialize GsqlHAHandler

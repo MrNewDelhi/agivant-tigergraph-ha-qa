@@ -1,0 +1,53 @@
+// The three workloads we probe under failure. Run:  gsql data/queries.gsql
+// Then INSTALL so they're callable over REST (installing is also what Case 3 tests being BLOCKED):
+//   gsql -g finGraph "INSTALL QUERY ALL"
+//
+// REST endpoints after install (port 9000):
+//   GET  /query/finGraph/getAccount?acc=acc0
+//   GET  /query/finGraph/kHopTransfers?acc=acc0&k=3     <- the main read probe (heavy enough to see failover)
+//   POST /query/finGraph/addTransfer?from_acc=acc0&to_acc=acc1&amt=10   <- the write probe
+
+USE GRAPH finGraph
+
+// 1. Cheap point-lookup by primary id (true O(1) vertex access)
+CREATE QUERY getAccount(VERTEX<Account> acc) FOR GRAPH finGraph {
+  S = {acc};
+  PRINT S;
+}
+
+// 2. k-hop traversal over TRANSFER edges — does real work, so a failover blip is visible in latency
+CREATE QUERY kHopTransfers(VERTEX<Account> acc, INT k) FOR GRAPH finGraph {
+  Seed = {acc};
+  Reached = Seed;
+  WHILE Seed.size() > 0 LIMIT k DO
+      Seed = SELECT t
+             FROM Seed:s -(TRANSFER>)- Account:t;
+      Reached = Reached UNION Seed;
+  END;
+  PRINT Reached.size() AS reached;
+}
+
+// 3. Write path — insert a TRANSFER edge (used in Case 5 write-consistency test)
+CREATE QUERY addTransfer(VERTEX<Account> from_acc, VERTEX<Account> to_acc, DOUBLE amt) FOR GRAPH finGraph {
+  INSERT INTO TRANSFER VALUES(from_acc, to_acc, amt);
+  PRINT "ok" AS status;
+}
+
+// 4. Server-side aggregation over the functional/database test fixture (ftA/ftB/ftC).
+//    Required by the pytest suite FT10 (count), FT11 (sum), FT12 (filter count).
+//    Against the fixture in tests/conftest.py (ftA=1000.00, ftB=2000.00, ftC=3000.50)
+//    it returns exactly:  n=3, bal=6000.50, hi=2  (accounts with balance>1500).
+//    Aggregation is done on the server (POST-ACCUM) so the DB does the compute, not the client.
+//    'sum' is a reserved word in GSQL, so the accumulators are named n / bal / hi.
+CREATE QUERY ftAgg() FOR GRAPH finGraph {
+  SumAccum<INT>    @@n;
+  SumAccum<DOUBLE> @@bal;
+  SumAccum<INT>    @@hi;
+  Start = {Account.*};
+  R = SELECT s FROM Start:s
+      WHERE s.id == "ftA" OR s.id == "ftB" OR s.id == "ftC"
+      POST-ACCUM @@n  += 1,
+                 @@bal += s.balance,
+                 @@hi += (CASE WHEN s.balance > 1500 THEN 1 ELSE 0 END);
+  PRINT @@n AS n, @@bal AS bal, @@hi AS hi;
+}

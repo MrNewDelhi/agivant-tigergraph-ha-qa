@@ -1,0 +1,659 @@
+Script started on 2026-07-06 22:18:49+00:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="120" LINES="30"]
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ gadmin status -v
++--------------------+-------------------------+-------------------------+-------------------------+
+|    Service Name    |	   Service Status      |      Process State	 |	 Process ID	   |
++--------------------+-------------------------+-------------------------+-------------------------+
+|      ADMIN#1	     |	       Online	       |	 Running	 |	    1135	   |
+|      ADMIN#2	     |	       Online	       |	 Running	 |	    1161	   |
+|      ADMIN#3	     |	       Online	       |	 Running	 |	    1105	   |
+|	CTRL#1	     |	       Online	       |	 Running	 |	    1944	   |
+|	CTRL#2	     |	       Online	       |	 Running	 |	    1947	   |
+|	CTRL#3	     |	       Online	       |	 Running	 |	    1888	   |
+|	DICT#1	     |	       Online	       |	 Running	 |	    2124	   |
+|	DICT#2	     |	       Online	       |	 Running	 |	    2146	   |
+|	DICT#3	     |	       Online	       |	 Running	 |	    2096	   |
+|	ETCD#1	     |	       Online	       |	 Running	 |	    2122	   |
+|	ETCD#2	     |	       Online	       |	 Running	 |	    2145	   |
+|	ETCD#3	     |	       Online	       |	 Running	 |	    2094	   |
+|	EXE_1	     |	       Online	       |	 Running	 |	    1117	   |
+|	EXE_2	     |	       Online	       |	 Running	 |	    1142	   |
+|	EXE_3	     |	       Online	       |	 Running	 |	    1085	   |
+|      GPE_1#1	     |	       Online	       |	 Running	 |	    18763	   |
+|      GPE_1#2	     |	       Online	       |	 Running	 |	    10331	   |
+|      GSE_1#1	     |	       Online	       |	 Running	 |	    18754	   |
+|      GSE_1#2	     |	       Online	       |	 Running	 |	    10318	   |
+|	GSQL#1	     |	       Online	       |	 Running	 |	    18796	   |
+|	GSQL#2	     |	       Online	       |	 Running	 |	    10419	   |
+|	GSQL#3	     |	       Online	       |	 Running	 |	    12855	   |
+|	GUI#1	     |	       Online	       |	 Running	 |	    4466	   |
+|	GUI#2	     |	       Online	       |	 Running	 |	    3977	   |
+|	GUI#3	     |	       Online	       |	 Running	 |	    4436	   |
+|	IFM#1	     |	       Online	       |	 Running	 |	    4456	   |
+|	IFM#2	     |	       Online	       |	 Running	 |	    3964	   |
+|	IFM#3	     |	       Online	       |	 Running	 |	    4427	   |
+|      KAFKA#1	     |	       Online	       |	 Running	 |	    17259	   |
+|      KAFKA#2	     |	       Online	       |	 Running	 |	    8818	   |
+|      KAFKA#3	     |	       Online	       |	 Running	 |	    11303	   |
+|    KAFKACONN#1     |	       Online	       |	 Running	 |	    18779	   |
+|    KAFKACONN#2     |	       Online	       |	 Running	 |	    10343	   |
+|    KAFKACONN#3     |	       Online	       |	 Running	 |	    12796	   |
+|   KAFKASTRM-LL_1   |	       Online	       |	 Running	 |	    1136	   |
+|   KAFKASTRM-LL_2   |	       Online	       |	 Running	 |	    1162	   |
+|   KAFKASTRM-LL_3   |	       Online	       |	 Running	 |	    1106	   |
+|      NGINX#1	     |	       Online	       |	 Running	 |	    4422	   |
+|      NGINX#2	     |	       Online	       |	 Running	 |	    3929	   |
+|      NGINX#3	     |	       Online	       |	 Running	 |	    4389	   |
+|      RESTPP#1      |	       Online	       |	 Running	 |	    17090	   |
+|      RESTPP#2      |	       Online	       |	 Running	 |	    8649	   |
+|      RESTPP#3      |	       Online	       |	 Running	 |	    11120	   |
+|	 ZK#1	     |	       Online	       |	 Running	 |	    1980	   |
+|	 ZK#2	     |	       Online	       |	 Running	 |	    2008	   |
+|	 ZK#3	     |	       Online	       |	 Running	 |	    1945	   |
++--------------------+-------------------------+-------------------------+-------------------------+
+gsshg|rgreph-Eg"gpe.servers|gse.servers|^Host m"grep -E "gpe.servers|gse.servers|^Host m"
+Host m1 ADMIN#1 admin#1 CTRL#1 ctrl#1 DICT#1 dict#1 ETCD#1 etcd#1 EXE_1 exe_1 GPE_1#1 gpe_1#1 GSE_1#1 gse_1#1 GSQL#1 gsql#1 GUI#1 gui#1 IFM#1 ifm#1 KAFKA#1 kafka#1 KAFKACONN#1 kafkaconn#1 KAFKASTRM-LL_1 kafkastrm-ll_1 NGINX#1 nginx#1 RESTPP#1 restpp#1 ZK#1 zk#1
+Host m2 ADMIN#2 admin#2 CTRL#2 ctrl#2 DICT#2 dict#2 ETCD#2 etcd#2 EXE_2 exe_2 GPE_1#2 gpe_1#2 GSE_1#2 gse_1#2 GSQL#2 gsql#2 GUI#2 gui#2 IFM#2 ifm#2 KAFKA#2 kafka#2 KAFKACONN#2 kafkaconn#2 KAFKASTRM-LL_2 kafkastrm-ll_2 NGINX#2 nginx#2 RESTPP#2 restpp#2 ZK#2 zk#2
+Host m3 ADMIN#3 admin#3 CTRL#3 ctrl#3 DICT#3 dict#3 ETCD#3 etcd#3 EXE_3 exe_3 GSQL#3 gsql#3 GUI#3 gui#3 IFM#3 ifm#3 KAFKA#3 kafka#3 KAFKACONN#3 kafkaconn#3 KAFKASTRM-LL_3 kafkastrm-ll_3 NGINX#3 nginx#3 RESTPP#3 restpp#3 ZK#3 zk#3
+#gpe.servers: m1,m2
+#gse.servers: m1,m2
+gadminrlicensegstatust|ggrepa-E@"Edition|EndTime"icense status | grep -E "Edition|EndTime"
+[Warning] License will expire in 24 days
+  EndTime: 2026-07-31 09:58:10 +0000 UTC
+  Edition: Enterprise
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ gstatusgraph
+=== cluster ===
+[CLUSTER] Nodes: 3, Total CPUs: 12
+[m1	] CPUs: 4
+[m2	] CPUs: 4
+[m3	] CPUs: 4
+=== graph ===
+[GRAPH	] Graph was loaded (/home/tigergraph/tigergraph/data/gstore):
+[m1	] Partition size: 9.1MiB, IDS size: 1.2MiB, Vertex count: 75053, Edge count: 601985, NumOfDeletedVertices: 184 NumOfSkippedVertices: 0
+[m2	] Partition size: 9.1MiB, IDS size: 1.2MiB, Vertex count: 75053, Edge count: 601985, NumOfDeletedVertices: 184 NumOfSkippedVertices: 0
+[m3	] Partition size: 0B, IDS size: 0B, Vertex count: 0, Edge count: 0, NumOfDeletedVertices: 0 NumOfSkippedVertices: 0
+[WARN	] Above vertex and edge counts are for internal use which show approximate topology size of the local graph partition. Use DML to get the correct graph topology information
+curlg-sg-XpPOST-"http://104.154.86.28:14240/restpp/graph/finGraph"0-d1'{"vertices":{"Account":{"demo1":{"balance":{"value":1000}}}}}'"|{teemresults/logs/S04_crud.log;0echo}}' | tee results/logs/S04_crud.log; echo
+tee: results/logs/S04_crud.log: No such file or directory
+^C
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ clear
+gadminrbackuptrestoretcaptestp-ytg-m1:~$ gadmin backup restore captest -y
+[   Info] [Mon Jul  6 22:35:01 UTC 2026] WARNING: Attempting to restore the cluster to a time 2026-07-06 20:33:03.180621154 +0000 UTC before the last restore (2026-07-06 20:35:56.001828694 +0000 UTC)
+[   Info] [Mon Jul  6 22:35:01 UTC 2026] Start to restore full backup captest
+[[[Error][ExternalError (restore failed; could not run command: Timeout (Failed to send ServiceCommand to executor, spanId [invoker@[10.128.0.2]#bash]@1783377301241287271:backup-restore; Timeout during sending rpc /tigergraph.tutopia.common.pb.ExecutorService/StartExecutable to 10.128.0.3:9177, deadline 2026-07-06 22:36:01.307382982 +0000 UTC, err: rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 10.128.0.3:9177: connect: connection refused"; Incomplete (Failed to execute command: ExecutableId:"BASH_CMD_6c8edce2d2e0419cb63309167aab6aa7"  ExecutablePath:"/bin/bash"  WorkDir:"/home/tigergraph/tigergraph/tmp"  Args:"-c"  Args:"if [ -f /home/tigergraph/tigergraph/data/backup_staging_dir/restore/captest/.sharepathcheck.20260706223501 ]; then echo 1; fi"  SpanId:"[invoker@[10.128.0.2]#bash]@1783377301241287271:backup-restore"	WaitDeadTimeoutMS:59999 in instance EXE_2)))
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ gadmin start all
+[   Info] Starting EXE
+[   Info] Starting CTRL
+[   Info] Starting ZK ETCD DICT KAFKA ADMIN GSE NGINX GPE RESTPP KAFKASTRM-LL KAFKACONN CTRL GSQL IFM GUI
+gadminrstatust-vm|:grepg-Eg"GPE_1|GSE_1|GSQL#|RESTPP|EXE" | grep -E "GPE_1|GSE_1|GSQL#|RESTPP|EXE"
+|	EXE_1	     |	       Online	       |	 Running	 |	    1117	   |
+|	EXE_2	     |	       Online	       |	 Running	 |	    1098	   |
+|	EXE_3	     |	       Online	       |	 Running	 |	    1085	   |
+|      GPE_1#1	     |	       Online	       |	 Running	 |	    18763	   |
+|      GPE_1#2	     |	       Warmup	       |	 Running	 |	    3886	   |
+|      GSE_1#1	     |	       Online	       |	 Running	 |	    18754	   |
+|      GSE_1#2	     |	       Warmup	       |	 Running	 |	    3882	   |
+|	GSQL#1	     |	       Online	       |	 Running	 |	    18796	   |
+|	GSQL#2	     |		Down	       |	 Running	 |	    3903	   |
+|	GSQL#3	     |	       Online	       |	 Running	 |	    12855	   |
+|      RESTPP#1      |	       Online	       |	 Running	 |	    17090	   |
+|      RESTPP#2      |	       Online	       |	 Running	 |	    3894	   |
+|      RESTPP#3      |	       Online	       |	 Running	 |	    11120	   |
+gadminrstatust-vm|:grepg-Eg"GPE_1|GSE_1|GSQL#|RESTPP|EXE" | grep -E "GPE_1|GSE_1|GSQL#|RESTPP|EXE"
+|	EXE_1	     |	       Online	       |	 Running	 |	    1117	   |
+|	EXE_2	     |	       Online	       |	 Running	 |	    1098	   |
+|	EXE_3	     |	       Online	       |	 Running	 |	    1085	   |
+|      GPE_1#1	     |	       Online	       |	 Running	 |	    18763	   |
+|      GPE_1#2	     |	       Warmup	       |	 Running	 |	    3886	   |
+|      GSE_1#1	     |	       Online	       |	 Running	 |	    18754	   |
+|      GSE_1#2	     |	       Warmup	       |	 Running	 |	    3882	   |
+|	GSQL#1	     |	       Online	       |	 Running	 |	    18796	   |
+|	GSQL#2	     |		Down	       |	 Running	 |	    3903	   |
+|	GSQL#3	     |	       Online	       |	 Running	 |	    12855	   |
+|      RESTPP#1      |	       Online	       |	 Running	 |	    17090	   |
+|      RESTPP#2      |	       Online	       |	 Running	 |	    3894	   |
+|      RESTPP#3      |	       Online	       |	 Running	 |	    11120	   |
+gadminrstatust-vm|:grepg-Eg"GPE_1|GSE_1|GSQL#|RESTPP|EXE" | grep -E "GPE_1|GSE_1|GSQL#|RESTPP|EXE"
+|	EXE_1	     |	       Online	       |	 Running	 |	    1117	   |
+|	EXE_2	     |	       Online	       |	 Running	 |	    1098	   |
+|	EXE_3	     |	       Online	       |	 Running	 |	    1085	   |
+|      GPE_1#1	     |	       Online	       |	 Running	 |	    18763	   |
+|      GPE_1#2	     |	       Online	       |	 Running	 |	    3886	   |
+|      GSE_1#1	     |	       Online	       |	 Running	 |	    18754	   |
+|      GSE_1#2	     |	       Warmup	       |	 Running	 |	    3882	   |
+|	GSQL#1	     |	       Online	       |	 Running	 |	    18796	   |
+|	GSQL#2	     |	       Warmup	       |	 Running	 |	    3903	   |
+|	GSQL#3	     |	       Online	       |	 Running	 |	    12855	   |
+|      RESTPP#1      |	       Online	       |	 Running	 |	    17090	   |
+|      RESTPP#2      |	       Online	       |	 Running	 |	    3894	   |
+|      RESTPP#3      |	       Online	       |	 Running	 |	    11120	   |
+gadminmstatust-vm|vgrepr-Eg"GPE_1|GSE_1|GSQL#|RESTPP|EXE"XE"grep -E "GPE_1|GSE_1|GSQL#|RESTPP|EXE"
+|	EXE_1	     |	       Online	       |	 Running	 |	    1117	   |
+|	EXE_2	     |	       Online	       |	 Running	 |	    1098	   |
+|	EXE_3	     |	       Online	       |	 Running	 |	    1085	   |
+|      GPE_1#1	     |	       Online	       |	 Running	 |	    18763	   |
+|      GPE_1#2	     |	       Online	       |	 Running	 |	    3886	   |
+|      GSE_1#1	     |	       Online	       |	 Running	 |	    18754	   |
+|      GSE_1#2	     |	       Online	       |	 Running	 |	    3882	   |
+|	GSQL#1	     |	       Online	       |	 Running	 |	    18796	   |
+|	GSQL#2	     |	       Online	       |	 Running	 |	    3903	   |
+|	GSQL#3	     |	       Online	       |	 Running	 |	    12855	   |
+|      RESTPP#1      |	       Online	       |	 Running	 |	    17090	   |
+|      RESTPP#2      |	       Online	       |	 Running	 |	    3894	   |
+|      RESTPP#3      |	       Online	       |	 Running	 |	    11120	   |
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ gstatusgraph
+=== cluster ===
+[CLUSTER] Nodes: 3, Total CPUs: 12
+[m1	] CPUs: 4
+[m2	] CPUs: 4
+[m3	] CPUs: 4
+=== graph ===
+[GRAPH	] Graph was loaded (/home/tigergraph/tigergraph/data/gstore):
+[m1	] Partition size: 9.1MiB, IDS size: 1.2MiB, Vertex count: 75053, Edge count: 601985, NumOfDeletedVertices: 259 NumOfSkippedVertices: 0
+[m2	] Partition size: 9.1MiB, IDS size: 1.2MiB, Vertex count: 75053, Edge count: 601985, NumOfDeletedVertices: 259 NumOfSkippedVertices: 0
+[m3	] Partition size: 0B, IDS size: 0B, Vertex count: 0, Edge count: 0, NumOfDeletedVertices: 0 NumOfSkippedVertices: 0
+[WARN	] Above vertex and edge counts are for internal use which show approximate topology size of the local graph partition. Use DML to get the correct graph topology information
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ gstatusgraph
+
+
+=== cluster ===
+
+
+
+
+[CLUSTER] Nodes: 3, Total CPUs: 12
+[m1	] CPUs: 4
+[m2	] CPUs: 4
+[m3	] CPUs: 4
+=== graph ===
+[GRAPH	] Graph was loaded (/home/tigergraph/tigergraph/data/gstore):
+[m1	] Partition size: 9.1MiB, IDS size: 1.2MiB, Vertex count: 75053, Edge count: 601985, NumOfDeletedVertices: 259 NumOfSkippedVertices: 0
+[m2	] Partition size: 9.1MiB, IDS size: 1.2MiB, Vertex count: 75053, Edge count: 601985, NumOfDeletedVertices: 259 NumOfSkippedVertices: 0
+[m3	] Partition size: 0B, IDS size: 0B, Vertex count: 0, Edge count: 0, NumOfDeletedVertices: 0 NumOfSkippedVertices: 0
+[WARN	] Above vertex and edge counts are for internal use which show approximate topology size of the local graph partition. Use DML to get the correct graph topology information
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ clear
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ gstatusgraph
+=== cluster ===
+[CLUSTER] Nodes: 3, Total CPUs: 12
+[m1	] CPUs: 4
+[m2	] CPUs: 4
+[m3	] CPUs: 4
+=== graph ===
+[GRAPH	] Graph was loaded (/home/tigergraph/tigergraph/data/gstore):
+[m1	] Partition size: 9.1MiB, IDS size: 1.2MiB, Vertex count: 75053, Edge count: 601985, NumOfDeletedVertices: 259 NumOfSkippedVertices: 0
+[m2	] Partition size: 9.1MiB, IDS size: 1.2MiB, Vertex count: 75053, Edge count: 601985, NumOfDeletedVertices: 259 NumOfSkippedVertices: 0
+[m3	] Partition size: 0B, IDS size: 0B, Vertex count: 0, Edge count: 0, NumOfDeletedVertices: 0 NumOfSkippedVertices: 0
+[WARN	] Above vertex and edge counts are for internal use which show approximate topology size of the local graph partition. Use DML to get the correct graph topology information
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ clear
+gadminrbackuptcreate~captesta--custom-taggadmin backup create captest --custom-tag
+[  Error] ParameterErr (Provided tag: 'captest' already exists, please use a different tag)
+gadminsstatust-veate~captesta--custom-taggadmin backup create captest --custom-tag
++--------------------+-------------------------+-------------------------+-------------------------+
+|    Service Name    |	   Service Status      |      Process State	 |	 Process ID	   |
++--------------------+-------------------------+-------------------------+-------------------------+
+|      ADMIN#1	     |	       Online	       |	 Running	 |	    1135	   |
+|      ADMIN#2	     |	       Online	       |	 Running	 |	    1118	   |
+|      ADMIN#3	     |	       Online	       |	 Running	 |	    1105	   |
+|	CTRL#1	     |	       Online	       |	 Running	 |	    1944	   |
+|	CTRL#2	     |	       Online	       |	 Running	 |	    1863	   |
+|	CTRL#3	     |	       Online	       |	 Running	 |	    1888	   |
+|	DICT#1	     |	       Online	       |	 Running	 |	    2124	   |
+|	DICT#2	     |	       Online	       |	 Running	 |	    2099	   |
+|	DICT#3	     |	       Online	       |	 Running	 |	    2096	   |
+|	ETCD#1	     |	       Online	       |	 Running	 |	    2122	   |
+|	ETCD#2	     |	       Online	       |	 Running	 |	    2098	   |
+|	ETCD#3	     |	       Online	       |	 Running	 |	    2094	   |
+|	EXE_1	     |	       Online	       |	 Running	 |	    1117	   |
+|	EXE_2	     |	       Online	       |	 Running	 |	    1098	   |
+|	EXE_3	     |	       Online	       |	 Running	 |	    1085	   |
+|      GPE_1#1	     |	       Online	       |	 Running	 |	    18763	   |
+|      GPE_1#2	     |	       Online	       |	 Running	 |	    3886	   |
+|      GSE_1#1	     |	       Online	       |	 Running	 |	    18754	   |
+|      GSE_1#2	     |	       Online	       |	 Running	 |	    3882	   |
+|	GSQL#1	     |	       Online	       |	 Running	 |	    18796	   |
+|	GSQL#2	     |	       Online	       |	 Running	 |	    3903	   |
+|	GSQL#3	     |	       Online	       |	 Running	 |	    12855	   |
+|	GUI#1	     |	       Online	       |	 Running	 |	    4466	   |
+|	GUI#2	     |	       Online	       |	 Running	 |	    3933	   |
+|	GUI#3	     |	       Online	       |	 Running	 |	    4436	   |
+|	IFM#1	     |	       Online	       |	 Running	 |	    4456	   |
+|	IFM#2	     |	       Online	       |	 Running	 |	    3919	   |
+|	IFM#3	     |	       Online	       |	 Running	 |	    4427	   |
+|      KAFKA#1	     |	       Online	       |	 Running	 |	    17259	   |
+|      KAFKA#2	     |	       Online	       |	 Running	 |	    2173	   |
+|      KAFKA#3	     |	       Online	       |	 Running	 |	    11303	   |
+|    KAFKACONN#1     |	       Online	       |	 Running	 |	    18779	   |
+|    KAFKACONN#2     |	       Online	       |	 Running	 |	    1117	   |
+|    KAFKACONN#3     |	       Online	       |	 Running	 |	    12796	   |
+|   KAFKASTRM-LL_1   |	       Online	       |	 Running	 |	    1136	   |
+|   KAFKASTRM-LL_2   |	       Online	       |	 Running	 |	    1119	   |
+|   KAFKASTRM-LL_3   |	       Online	       |	 Running	 |	    1106	   |
+|      NGINX#1	     |	       Online	       |	 Running	 |	    4422	   |
+|      NGINX#2	     |	       Online	       |	 Running	 |	    3883	   |
+|      NGINX#3	     |	       Online	       |	 Running	 |	    4389	   |
+|      RESTPP#1      |	       Online	       |	 Running	 |	    17090	   |
+|      RESTPP#2      |	       Online	       |	 Running	 |	    3894	   |
+|      RESTPP#3      |	       Online	       |	 Running	 |	    11120	   |
+|	 ZK#1	     |	       Online	       |	 Running	 |	    1980	   |
+|	 ZK#2	     |	       Online	       |	 Running	 |	    1965	   |
+|	 ZK#3	     |	       Online	       |	 Running	 |	    1945	   |
++--------------------+-------------------------+-------------------------+-------------------------+
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ gssh
+Usage: gssh m1|gpe_1#1|gse1_1#1|...
+Usage: ----------------Available hosts--------------
+Host *
+    IdentityFile /home/tigergraph/.ssh/id_rsa
+    IdentityFile /home/tigergraph/.ssh/tigergraph_rsa
+    Port 22
+
+Host m1 ADMIN#1 admin#1 CTRL#1 ctrl#1 DICT#1 dict#1 ETCD#1 etcd#1 EXE_1 exe_1 GPE_1#1 gpe_1#1 GSE_1#1 gse_1#1 GSQL#1 gsql#1 GUI#1 gui#1 IFM#1 ifm#1 KAFKA#1 kafka#1 KAFKACONN#1 kafkaconn#1 KAFKASTRM-LL_1 kafkastrm-ll_1 NGINX#1 nginx#1 RESTPP#1 restpp#1 ZK#1 zk#1
+    HostName 10.128.0.2
+
+Host m2 ADMIN#2 admin#2 CTRL#2 ctrl#2 DICT#2 dict#2 ETCD#2 etcd#2 EXE_2 exe_2 GPE_1#2 gpe_1#2 GSE_1#2 gse_1#2 GSQL#2 gsql#2 GUI#2 gui#2 IFM#2 ifm#2 KAFKA#2 kafka#2 KAFKACONN#2 kafkaconn#2 KAFKASTRM-LL_2 kafkastrm-ll_2 NGINX#2 nginx#2 RESTPP#2 restpp#2 ZK#2 zk#2
+    HostName 10.128.0.3
+
+Host m3 ADMIN#3 admin#3 CTRL#3 ctrl#3 DICT#3 dict#3 ETCD#3 etcd#3 EXE_3 exe_3 GSQL#3 gsql#3 GUI#3 gui#3 IFM#3 ifm#3 KAFKA#3 kafka#3 KAFKACONN#3 kafkaconn#3 KAFKASTRM-LL_3 kafkastrm-ll_3 NGINX#3 nginx#3 RESTPP#3 restpp#3 ZK#3 zk#3
+    HostName 10.128.0.4
+
+#cluster.nodes: m1:10.128.0.2,m2:10.128.0.3,m3:10.128.0.4
+#admin.servers: m1,m2,m3
+#ctrl.servers: m1,m2,m3
+#dict.servers: m1,m2,m3
+#etcd.servers: m1,m2,m3
+#exe.servers: m1,m2,m3
+#gpe.servers: m1,m2
+#gse.servers: m1,m2
+#gsql.servers: m1,m2,m3
+#gui.servers: m1,m2,m3
+#ifm.servers: m1,m2,m3
+#kafka.servers: m1,m2,m3
+#kafkaconn.servers: m1,m2,m3
+#kafkastrm-ll.servers: m1,m2,m3
+#nginx.servers: m1,m2,m3
+#restpp.servers: m1,m2,m3
+#zk.servers: m1,m2,m3
+#log.root: /home/tigergraph/tigergraph/log
+#app.root: /home/tigergraph/tigergraph/app/4.1.4
+#data.root: /home/tigergraph/tigergraph/data
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ gadmin start all -y
+Error: unknown shorthand flag: 'y' in -y
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ gadmin status -v
++--------------------+-------------------------+-------------------------+-------------------------+
+|    Service Name    |	   Service Status      |      Process State	 |	 Process ID	   |
++--------------------+-------------------------+-------------------------+-------------------------+
+|      ADMIN#1	     |	       Online	       |	 Running	 |	    1135	   |
+|      ADMIN#2	     |	       Online	       |	 Running	 |	    1118	   |
+|      ADMIN#3	     |	       Online	       |	 Running	 |	    1105	   |
+|	CTRL#1	     |	       Online	       |	 Running	 |	    1944	   |
+|	CTRL#2	     |	       Online	       |	 Running	 |	    1863	   |
+|	CTRL#3	     |	       Online	       |	 Running	 |	    1888	   |
+|	DICT#1	     |	       Online	       |	 Running	 |	    2124	   |
+|	DICT#2	     |	       Online	       |	 Running	 |	    2099	   |
+|	DICT#3	     |	       Online	       |	 Running	 |	    2096	   |
+|	ETCD#1	     |	       Online	       |	 Running	 |	    2122	   |
+|	ETCD#2	     |	       Online	       |	 Running	 |	    2098	   |
+|	ETCD#3	     |	       Online	       |	 Running	 |	    2094	   |
+|	EXE_1	     |	       Online	       |	 Running	 |	    1117	   |
+|	EXE_2	     |	       Online	       |	 Running	 |	    1098	   |
+|	EXE_3	     |	       Online	       |	 Running	 |	    1085	   |
+|      GPE_1#1	     |	       Online	       |	 Running	 |	    18763	   |
+|      GPE_1#2	     |	       Online	       |	 Running	 |	    3886	   |
+|      GSE_1#1	     |	       Online	       |	 Running	 |	    18754	   |
+|      GSE_1#2	     |	       Online	       |	 Running	 |	    3882	   |
+|	GSQL#1	     |	       Online	       |	 Running	 |	    18796	   |
+|	GSQL#2	     |	       Online	       |	 Running	 |	    3903	   |
+|	GSQL#3	     |	       Online	       |	 Running	 |	    12855	   |
+|	GUI#1	     |	       Online	       |	 Running	 |	    4466	   |
+|	GUI#2	     |	       Online	       |	 Running	 |	    3933	   |
+|	GUI#3	     |	       Online	       |	 Running	 |	    4436	   |
+|	IFM#1	     |	       Online	       |	 Running	 |	    4456	   |
+|	IFM#2	     |	       Online	       |	 Running	 |	    3919	   |
+|	IFM#3	     |	       Online	       |	 Running	 |	    4427	   |
+|      KAFKA#1	     |	       Online	       |	 Running	 |	    17259	   |
+|      KAFKA#2	     |	       Online	       |	 Running	 |	    2173	   |
+|      KAFKA#3	     |	       Online	       |	 Running	 |	    11303	   |
+|    KAFKACONN#1     |	       Online	       |	 Running	 |	    18779	   |
+|    KAFKACONN#2     |	       Online	       |	 Running	 |	    1117	   |
+|    KAFKACONN#3     |	       Online	       |	 Running	 |	    12796	   |
+|   KAFKASTRM-LL_1   |	       Online	       |	 Running	 |	    1136	   |
+|   KAFKASTRM-LL_2   |	       Online	       |	 Running	 |	    1119	   |
+|   KAFKASTRM-LL_3   |	       Online	       |	 Running	 |	    1106	   |
+|      NGINX#1	     |	       Online	       |	 Running	 |	    4422	   |
+|      NGINX#2	     |	       Online	       |	 Running	 |	    3883	   |
+|      NGINX#3	     |	       Online	       |	 Running	 |	    4389	   |
+|      RESTPP#1      |	       Online	       |	 Running	 |	    17090	   |
+|      RESTPP#2      |	       Online	       |	 Running	 |	    3894	   |
+|      RESTPP#3      |	       Online	       |	 Running	 |	    11120	   |
+|	 ZK#1	     |	       Online	       |	 Running	 |	    1980	   |
+|	 ZK#2	     |	       Online	       |	 Running	 |	    1965	   |
+|	 ZK#3	     |	       Online	       |	 Running	 |	    1945	   |
++--------------------+-------------------------+-------------------------+-------------------------+
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ clear
+gadminrbackuptcreate~captest_step9_$(dateg+%Y%m%d%H%M%S)r--custom-tag_step9_$(date +%Y%m%d%H%M%S) --custom-tag
+[   Info] [Mon Jul  6 22:51:14 UTC 2026] Tag is captest_step9_20260706225114
+[   Info] [Mon Jul  6 22:51:14 UTC 2026] Backup timeout is 18000 seconds
+[   Info] [Mon Jul  6 22:51:14 UTC 2026] Backup path: /home/tigergraph/backups/captest_step9_20260706225114
+[   Info] [Mon Jul  6 22:51:14 UTC 2026] Staging path: /home/tigergraph/tigergraph/data/backup_staging_dir/backup/captest_step9_20260706225114 (shared: false)
+[   Info] [Mon Jul  6 22:51:14 UTC 2026] Created backup directories
+[   Info] [Mon Jul  6 22:51:14 UTC 2026] Begin to check needed disk space...
+[   Info] [Mon Jul  6 22:51:15 UTC 2026] Exporting GSQL data... (async)
+[   Info] [Mon Jul  6 22:51:15 UTC 2026] Exporting GSE data... (async)
+[   Info] [Mon Jul  6 22:51:15 UTC 2026] Exporting GPE data... (async)
+[   Info] [Mon Jul  6 22:51:15 UTC 2026] Exporting GUI data... (async)
+[   Info] [Mon Jul  6 22:51:15 UTC 2026] GUI exported
+[   Info] [Mon Jul  6 22:51:15 UTC 2026] GSQL exported
+[   Info] [Mon Jul  6 22:51:26 UTC 2026] GSE exported
+[   Info] [Mon Jul  6 22:51:50 UTC 2026] GPE exported
+[   Info] [Mon Jul  6 22:51:50 UTC 2026] Calculating the raw size of the exported data...
+[   Info] [Mon Jul  6 22:51:50 UTC 2026] Calculate the raw size of GPE_1_1
+[   Info] [Mon Jul  6 22:51:50 UTC 2026] Calculate the raw size of GUI
+[   Info] [Mon Jul  6 22:51:50 UTC 2026] Calculate the raw size of GSQL
+[   Info] [Mon Jul  6 22:51:50 UTC 2026] Calculate the raw size of GSE_1_1
+[   Info] [Mon Jul  6 22:51:50 UTC 2026] Archiving exported data...
+[   Info] [Mon Jul  6 22:51:50 UTC 2026] Archiving GPE_1_1 data
+[   Info] [Mon Jul  6 22:51:50 UTC 2026] Archiving GUI data
+[   Info] [Mon Jul  6 22:51:50 UTC 2026] Archiving GSQL data
+[   Info] [Mon Jul  6 22:51:50 UTC 2026] Archiving GSE_1_1 data
+[   Info] [Mon Jul  6 22:51:50 UTC 2026] Calculating the file size of the archives...
+[   Info] [Mon Jul  6 22:51:50 UTC 2026] Calculate the file size of GPE_1_1.tgdat data
+[   Info] [Mon Jul  6 22:51:50 UTC 2026] Calculate the file size of GSE_1_1.tgdat data
+[   Info] [Mon Jul  6 22:51:50 UTC 2026] Calculate the file size of GUI.tgdat data
+[   Info] [Mon Jul  6 22:51:50 UTC 2026] Calculate the file size of GSQL.tgdat data
+[   Info] [Mon Jul  6 22:51:50 UTC 2026] Saving the backup metadata...
+[   Info] [Mon Jul  6 22:51:50 UTC 2026] Backup completes, backup files are under the path: /home/tigergraph/backups/captest_step9_20260706225114
+[   Info] [Mon Jul  6 22:51:50 UTC 2026] Clean staging directory: /home/tigergraph/tigergraph/data/backup_staging_dir/backup/captest_step9_20260706225114
+[   Info] [Mon Jul  6 22:51:50 UTC 2026] Clean staging directory /home/tigergraph/tigergraph/data/backup_staging_dir/backup/captest_step9_20260706225114 successfully
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ gadmin backup list
++------------------------------+------+---------+--------+----------------------+
+|	      TAG	       | TYPE | VERSION |  SIZE  |	CREATED AT	|
++------------------------------+------+---------+--------+----------------------+
+| qatest		       | FULL | 4.1.4	| 7.3 MB | 2026-07-06T16:47:59Z |
+| captest		       | FULL | 4.1.4	| 7.3 MB | 2026-07-06T20:33:03Z |
+| captest_step9_20260706225114 | FULL | 4.1.4	| 7.3 MB | 2026-07-06T22:51:14Z |
++------------------------------+------+---------+--------+----------------------+
+gadminrbackuptrestoretcaptes_step9_20260706225114a-yup restore captest -y
+[   Info] [Mon Jul  6 22:53:58 UTC 2026] Start to restore full backup captest_step9_20260706225114
+[   Info] [Mon Jul  6 22:53:58 UTC 2026] Staging path: /home/tigergraph/tigergraph/data/backup_staging_dir/restore/captest_step9_20260706225114 (shared: false)
+[   Info] [Mon Jul  6 22:53:58 UTC 2026] Begin to check needed disk space...
+[   Info] [Mon Jul  6 22:53:58 UTC 2026] Scan backup archives under the path /home/tigergraph/backups/captest_step9_20260706225114
+[   Info] [Mon Jul  6 22:53:58 UTC 2026] Prepare archives...
+[   Info] [Mon Jul  6 22:53:58 UTC 2026] Start to restore GPE & GSE data...
+[   Info] [Mon Jul  6 22:53:58 UTC 2026] Stopping GPE, GSE, RESTPP, and GSQL...
+[   Info] [Mon Jul  6 22:54:19 UTC 2026] Backing up current GPE & GSE data...
+[   Info] [Mon Jul  6 22:54:19 UTC 2026] Extracting GPE & GSE data...
+[   Info] [Mon Jul  6 22:54:19 UTC 2026] Replace Gstore successfully. you can remove manually the path /home/tigergraph/tigergraph/data/gstore_memo-20260706225419 after the restore is finished.
+[   Info] [Mon Jul  6 22:54:19 UTC 2026] Resetting GPE & GSE
+[   Info] [Mon Jul  6 22:54:51 UTC 2026] Write back full backup's watermarks
+[   Info] [Mon Jul  6 22:55:19 UTC 2026] Restore GPE & GSE successfully.
+[   Info] [Mon Jul  6 22:55:31 UTC 2026] Importing GUI data... (async)
+[   Info] [Mon Jul  6 22:55:31 UTC 2026] Extracting GUI#1 data...
+[   Info] [Mon Jul  6 22:55:31 UTC 2026] Importing GSQL data... (async)
+[   Info] [Mon Jul  6 22:55:31 UTC 2026] Extracting GSQL data...
+[   Info] [Mon Jul  6 22:55:32 UTC 2026] GUI imported
+[   Info] [Mon Jul  6 22:55:36 UTC 2026] GSQL imported
+[   Info] [Mon Jul  6 22:55:36 UTC 2026] Resetting GSQL & KAFKACONN
+[   Info] [Mon Jul  6 22:56:00 UTC 2026] Starting services
+[   Info] [Mon Jul  6 22:56:26 UTC 2026] Restore completes
+[   Info] [Mon Jul  6 22:56:26 UTC 2026] Clean staging directory: /home/tigergraph/tigergraph/data/backup_staging_dir/restore/captest_step9_20260706225114
+[   Info] [Mon Jul  6 22:56:26 UTC 2026] Clean staging directory /home/tigergraph/tigergraph/data/backup_staging_dir/restore/captest_step9_20260706225114 successfully
+gadminrstatust-vm|:grepg-Eg"GPE_1|RESTPP"gadmin status -v | grep -E "GPE_1|RESTPP"
+|      GPE_1#1	     |	       Online	       |	 Running	 |	    33373	   |
+|      GPE_1#2	     |	       Online	       |	 Running	 |	    9673	   |
+|      RESTPP#1      |	       Online	       |	 Running	 |	    31699	   |
+|      RESTPP#2      |	       Online	       |	 Running	 |	    8004	   |
+|      RESTPP#3      |	       Online	       |	 Running	 |	    19216	   |
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ clear
+grepg-aEr"GsqlHAHandler"e/home/tigergraph/tigergraph/log/gsql/log.INFO*/|itailr-8h/tigergraph/log/gsql/log.INFO* | tail -8
+I@20260706 22:56:07.687  (GsqlHAHandler.java:85) Initialize GsqlHAHandler
+I@20260706 22:56:08.376  (GsqlHAHandler.java:292) GSQL leader switches from 'm1' to 'm3' ...
+E@20260706 22:56:08.377  (GsqlHAHandler.java:307) GSQL HA leader switches to 'm3', abort and clear all sessions now.
+I@20260706 22:56:08.420  (GsqlHAHandler.java:328) switched to new leader: m3
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ clear
+gsqlg-ggfinGraphm'CREATEeORrREPLACEmQUERYgliveProbe()rFOR GRAPHTfinGraphL{CPRINTR"hi";e}'obe() FOR GRAPH finGraph { PRINT "hi"; }'
+Successfully created queries: [liveProbe].
+gsqlg-ggfinGraphm'INSTALLrQUERY@liveProbe'sql -g finGraph 'INSTALL QUERY liveProbe'
+Start installing queries, about 1 minute ...
+liveProbe query: curl -X GET 'http://10.128.0.2:14240/restpp/query/finGraph/liveProbe'. Add -H "Authorization: Bearer TOKEN" if authentication is enabled.
+gsql -g finGraph ls | grep -i liveProbe
+curl -s http://127.0.0.1:9000/query/finGraph/liveProbe ; echo
+
+Warning: These queries below in the graph 'finGraph' cannot be correctly installed:
+[liveProbe]
+For more information, please check log at node 'm2': /home/tigergraph/tigergraph/log/gsql/ERROR.20260706-225603.685
+
+Graph finGraph: no queries in this catalog need to be re-compiled. Skip to linking.
+Query installation failed!
+For more info, please check log at node 'm2': /home/tigergraph/tigergraph/log/gsql/ERROR.20260706-225603.685
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ gsql -g finGraph ls | grep -i liveProbe
+  - liveProbe()
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ curl -s http://127.0.0.1:9000/query/finGraph/liveProbe ; echo
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/finGraph/liveProbe, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
+watche-n2a'gadmin1statuse-vr|pgrep--E:"EXE_3|GSQL#3|RESTPP#3|ZK#3|ETCD#3"'\ -E "EXE_3|GSQL#3|RESTPP#3|ZK#3|ETCD#3"'
+gsqlg-ggfinGraphm"ls"t|ggrepa-i@-A3m-B3$liveProbefinGraphP"ls"Z|#grepC-i3-A3--B3 liveProbe6 23:20:20 2026|ETCD#3|Online|Running|2145|
+  - ftAgg() (installed v2)
+  - getAccount(vertex<Account> acc) (installed v2)
+  - kHopTransfers(vertex<Account> acc, int k) (installed v2)
+  - liveProbe()
+
+
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ gsql -g finGraph "DROP QUERY liveProbe"
+gsql -g finGraph "DROP QUERY liveProbe"
+
+Successfully dropped queries on the graph 'finGraph': [liveProbe].
+gsqlg-ggfinGraphm"INSTALLrQUERY@liveProbe"sql -g finGraph "INSTALL QUERY liveProbe"
+Semantic Check Fails: The specified query liveProbe could not be resolved within the provided graph finGraph. Please verify that the query has been saved to the target graph before attempting installation.
+Query installation failed!
+For more info, please check log at node 'm2': /home/tigergraph/tigergraph/log/gsql/ERROR.20260706-225603.685
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ gsql -g finGraph 'CREATE QUERY liveProbe() FOR GRAPH finGraph { PRINT "ok" AS status; }'
+gsql -g finGraph 'CREATE QUERY liveProbe() FOR GRAPH finGraph { PRINT "ok" AS status; }'
+
+Successfully created queries: [liveProbe].
+gsqlg-ggfinGraphm"INSTALLrQUERY@liveProbe"sql -g finGraph "INSTALL QUERY liveProbe"
+Start installing queries, about 1 minute ...
+liveProbe query: curl -X GET 'http://10.128.0.2:14240/restpp/query/finGraph/liveProbe'. Add -H "Authorization: Bearer TOKEN" if authentication is enabled.
+Select 'm2 (half load)' as compile server, now connecting ...
+Node 'm2 (half load)' is prepared as compile server.
+Select 'm1' as compile server, now connecting ...
+Select 'm3' as compile server, now connecting ...
+Node 'm1' is prepared as compile server.
+Node 'm3' is prepared as compile server.
+
+[========================================================================================================] 100%((1/1)
+contribution of node 'm1': 66.7%
+contribution of node 'm2': 33.3%
+contribution of node 'm3': 0.0%
+Query installation finished.
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ gsql -g finGraph "ls" | grep -i -A3 -B3 liveProbe
+gsql -g finGraph "ls" | grep -i -A3 -B3 liveProbe
+
+  - ftAgg() (installed v2)
+  - getAccount(vertex<Account> acc) (installed v2)
+  - kHopTransfers(vertex<Account> acc, int k) (installed v2)
+  - liveProbe() (installed v2)
+
+
+gsqlg-ggfinGraphmls |tgrepg-ipliveProbe$ gsql -g finGraph ls | grep -i liveProbe
+  - liveProbe() (installed v2)
+curlg-sghttp://127.0.0.1:9000/query/finGraph/liveProbe/;1echo.0.1:9000/query/finGraph/liveProbe ; echo
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"status":"ok"}]}
+gsqlg-ggfinGraphm"DROPiQUERYaliveProbe"$ gsql -g finGraph "DROP QUERY liveProbe"
+Successfully dropped queries on the graph 'finGraph': [liveProbe].
+gsqlg-ggfinGraphm"ls"t|ggrepa-i@liveProbeg||lechof"liveProbesremoved" -i liveProbe || echo "liveProbe removed"
+liveProbe removed
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ clear
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ gsql -g finGraph 'CREATE OR REPLACE QUERY liveProbe() FOR GRAPH finGraph { PRINT "hi"; }'
+gsql -g finGraph 'CREATE OR REPLACE QUERY liveProbe() FOR GRAPH finGraph { PRINT "hi"; }'
+
+Successfully created queries: [liveProbe].
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ gsql -g finGraph 'INSTALL QUERY liveProbe'
+gsql -g finGraph 'INSTALL QUERY liveProbe'
+
+Start installing queries, about 1 minute ...
+liveProbe query: curl -X GET 'http://10.128.0.2:14240/restpp/query/finGraph/liveProbe'. Add -H "Authorization: Bearer TOKEN" if authentication is enabled.
+
+Warning: These queries below in the graph 'finGraph' cannot be correctly installed:
+[liveProbe]
+For more information, please check log at node 'm2': /home/tigergraph/tigergraph/log/gsql/ERROR.20260706-225603.685
+
+Graph finGraph: no queries in this catalog need to be re-compiled. Skip to linking.
+Query installation failed!
+For more info, please check log at node 'm2': /home/tigergraph/tigergraph/log/gsql/ERROR.20260706-225603.685
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ gsql -g finGraph "ls" | grep -i liveProbe
+gsql -g finGraph "ls" | grep -i liveProbe
+
+  - liveProbe()
+curlg-sghttp://127.0.0.1:9000/query/finGraph/liveProbe/;1echo.0.1:9000/query/finGraph/liveProbe ; echo
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/finGraph/liveProbe, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ gadmin start all
+[   Info] Starting EXE
+[   Info] Starting CTRL
+[   Info] Starting ZK ETCD DICT KAFKA ADMIN GSE NGINX GPE RESTPP KAFKASTRM-LL KAFKACONN CTRL GSQL IFM GUI
+gadminrstatust-vm|:grepg-Eg"GSQL#|RESTPP"gadmin status -v | grep -E "GSQL#|RESTPP"
+|	GSQL#1	     |	       Online	       |	 Running	 |	    33412	   |
+|	GSQL#2	     |	       Online	       |	 Running	 |	    9737	   |
+|	GSQL#3	     |	       Warmup	       |	 Running	 |	    3878	   |
+|      RESTPP#1      |	       Online	       |	 Running	 |	    31699	   |
+|      RESTPP#2      |	       Online	       |	 Running	 |	    8004	   |
+|      RESTPP#3      |	       Online	       |	 Running	 |	    3868	   |
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ gadmin status -v | grep -E "GSQL#|RESTPP"
+|	GSQL#1	     |	       Online	       |	 Running	 |	    33412	   |
+|	GSQL#2	     |	       Online	       |	 Running	 |	    9737	   |
+|	GSQL#3	     |	       Online	       |	 Running	 |	    3878	   |
+|      RESTPP#1      |	       Online	       |	 Running	 |	    31699	   |
+|      RESTPP#2      |	       Online	       |	 Running	 |	    8004	   |
+|      RESTPP#3      |	       Online	       |	 Running	 |	    3868	   |
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ clear
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ gadmin start all
+[   Info] Starting EXE
+[   Info] Starting CTRL
+[   Info] Starting ZK ETCD DICT KAFKA ADMIN GSE NGINX GPE RESTPP KAFKASTRM-LL KAFKACONN CTRL GSQL IFM GUI
+gadminrstatust-vm|:grepg-Eg"GPE_1|GSQL#|RESTPP" status -v | grep -E "GPE_1|GSQL#|RESTPP"
+|      GPE_1#1	     |	       Online	       |	 Running	 |	    33373	   |
+|      GPE_1#2	     |	       Warmup	       |	 Running	 |	    3874	   |
+|	GSQL#1	     |	       Online	       |	 Running	 |	    33412	   |
+|	GSQL#2	     |		Down	       |	 Running	 |	    3890	   |
+|	GSQL#3	     |		Down	       |	 Running	 |	    3892	   |
+|      RESTPP#1      |	       Online	       |	 Running	 |	    31699	   |
+|      RESTPP#2      |	       Online	       |	 Running	 |	    3881	   |
+|      RESTPP#3      |	       Online	       |	 Running	 |	    3885	   |
+gadminrstatust-vm|:grepg-Eg"GPE_1|GSQL#|RESTPP" status -v | grep -E "GPE_1|GSQL#|RESTPP"
+|      GPE_1#1	     |	       Online	       |	 Running	 |	    33373	   |
+|      GPE_1#2	     |	       Online	       |	 Running	 |	    3874	   |
+|	GSQL#1	     |	       Online	       |	 Running	 |	    33412	   |
+|	GSQL#2	     |	       Warmup	       |	 Running	 |	    3890	   |
+|	GSQL#3	     |	       Warmup	       |	 Running	 |	    3892	   |
+|      RESTPP#1      |	       Online	       |	 Running	 |	    31699	   |
+|      RESTPP#2      |	       Online	       |	 Running	 |	    3881	   |
+|      RESTPP#3      |	       Online	       |	 Running	 |	    3885	   |
+gadminrstatust-vm|:grepg-Eg"GPE_1|GSQL#|RESTPP" status -v | grep -E "GPE_1|GSQL#|RESTPP"
+|      GPE_1#1	     |	       Online	       |	 Running	 |	    33373	   |
+|      GPE_1#2	     |	       Online	       |	 Running	 |	    3874	   |
+|	GSQL#1	     |	       Online	       |	 Running	 |	    33412	   |
+|	GSQL#2	     |	       Warmup	       |	 Running	 |	    3890	   |
+|	GSQL#3	     |	       Warmup	       |	 Running	 |	    3892	   |
+|      RESTPP#1      |	       Online	       |	 Running	 |	    31699	   |
+|      RESTPP#2      |	       Online	       |	 Running	 |	    3881	   |
+|      RESTPP#3      |	       Online	       |	 Running	 |	    3885	   |
+gadminrstatust-vm|:grepg-Eg"GPE_1|GSQL#|RESTPP" status -v | grep -E "GPE_1|GSQL#|RESTPP"
+|      GPE_1#1	     |	       Online	       |	 Running	 |	    33373	   |
+|      GPE_1#2	     |	       Online	       |	 Running	 |	    3874	   |
+|	GSQL#1	     |	       Online	       |	 Running	 |	    33412	   |
+|	GSQL#2	     |	       Warmup	       |	 Running	 |	    3890	   |
+|	GSQL#3	     |	       Warmup	       |	 Running	 |	    3892	   |
+|      RESTPP#1      |	       Online	       |	 Running	 |	    31699	   |
+|      RESTPP#2      |	       Online	       |	 Running	 |	    3881	   |
+|      RESTPP#3      |	       Online	       |	 Running	 |	    3885	   |
+gadminrstatust-vm|:grepg-Eg"GPE_1|GSQL#|RESTPP" status -v | grep -E "GPE_1|GSQL#|RESTPP"
+|      GPE_1#1	     |	       Online	       |	 Running	 |	    33373	   |
+|      GPE_1#2	     |	       Online	       |	 Running	 |	    3874	   |
+|	GSQL#1	     |	       Online	       |	 Running	 |	    33412	   |
+|	GSQL#2	     |	       Warmup	       |	 Running	 |	    3890	   |
+|	GSQL#3	     |	       Warmup	       |	 Running	 |	    3892	   |
+|      RESTPP#1      |	       Online	       |	 Running	 |	    31699	   |
+|      RESTPP#2      |	       Online	       |	 Running	 |	    3881	   |
+|      RESTPP#3      |	       Online	       |	 Running	 |	    3885	   |
+gadminrstatust-vm|:grepg-Eg"GPE_1|GSQL#|RESTPP" status -v | grep -E "GPE_1|GSQL#|RESTPP"
+|      GPE_1#1	     |	       Online	       |	 Running	 |	    33373	   |
+|      GPE_1#2	     |	       Online	       |	 Running	 |	    3874	   |
+|	GSQL#1	     |	       Online	       |	 Running	 |	    33412	   |
+|	GSQL#2	     |	       Warmup	       |	 Running	 |	    3890	   |
+|	GSQL#3	     |	       Warmup	       |	 Running	 |	    3892	   |
+|      RESTPP#1      |	       Online	       |	 Running	 |	    31699	   |
+|      RESTPP#2      |	       Online	       |	 Running	 |	    3881	   |
+|      RESTPP#3      |	       Online	       |	 Running	 |	    3885	   |
+gadminrstatust-vm|:grepg-Eg"GPE_1|GSQL#|RESTPP" status -v | grep -E "GPE_1|GSQL#|RESTPP"
+|      GPE_1#1	     |	       Online	       |	 Running	 |	    33373	   |
+|      GPE_1#2	     |	       Online	       |	 Running	 |	    3874	   |
+|	GSQL#1	     |	       Online	       |	 Running	 |	    33412	   |
+|	GSQL#2	     |	       Warmup	       |	 Running	 |	    3890	   |
+|	GSQL#3	     |	       Warmup	       |	 Running	 |	    3892	   |
+|      RESTPP#1      |	       Online	       |	 Running	 |	    31699	   |
+|      RESTPP#2      |	       Online	       |	 Running	 |	    3881	   |
+|      RESTPP#3      |	       Online	       |	 Running	 |	    3885	   |
+gadminrstatust-vm|:grepg-Eg"GPE_1|GSQL#|RESTPP" status -v | grep -E "GPE_1|GSQL#|RESTPP"
+|      GPE_1#1	     |	       Online	       |	 Running	 |	    33373	   |
+|      GPE_1#2	     |	       Online	       |	 Running	 |	    3874	   |
+|	GSQL#1	     |	       Online	       |	 Running	 |	    33412	   |
+|	GSQL#2	     |	       Warmup	       |	 Running	 |	    3890	   |
+|	GSQL#3	     |	       Warmup	       |	 Running	 |	    3892	   |
+|      RESTPP#1      |	       Online	       |	 Running	 |	    31699	   |
+|      RESTPP#2      |	       Online	       |	 Running	 |	    3881	   |
+|      RESTPP#3      |	       Online	       |	 Running	 |	    3885	   |
+gadminrstatust-vm|:grepg-Eg"GPE_1|GSQL#|RESTPP" status -v | grep -E "GPE_1|GSQL#|RESTPP"
+|      GPE_1#1	     |	       Online	       |	 Running	 |	    33373	   |
+|      GPE_1#2	     |	       Online	       |	 Running	 |	    3874	   |
+|	GSQL#1	     |	       Online	       |	 Running	 |	    33412	   |
+|	GSQL#2	     |	       Warmup	       |	 Running	 |	    3890	   |
+|	GSQL#3	     |	       Online	       |	 Running	 |	    3892	   |
+|      RESTPP#1      |	       Online	       |	 Running	 |	    31699	   |
+|      RESTPP#2      |	       Online	       |	 Running	 |	    3881	   |
+|      RESTPP#3      |	       Online	       |	 Running	 |	    3885	   |
+gadminrstatust-vm|:grepg-Eg"GPE_1|GSQL#|RESTPP" status -v | grep -E "GPE_1|GSQL#|RESTPP"
+|      GPE_1#1	     |	       Online	       |	 Running	 |	    33373	   |
+|      GPE_1#2	     |	       Online	       |	 Running	 |	    3874	   |
+|	GSQL#1	     |	       Online	       |	 Running	 |	    33412	   |
+|	GSQL#2	     |	       Online	       |	 Running	 |	    3890	   |
+|	GSQL#3	     |	       Online	       |	 Running	 |	    3892	   |
+|      RESTPP#1      |	       Online	       |	 Running	 |	    31699	   |
+|      RESTPP#2      |	       Online	       |	 Running	 |	    3881	   |
+|      RESTPP#3      |	       Online	       |	 Running	 |	    3885	   |
+0;tigergraph@tg-m1: ~tigergraph@tg-m1:~$ exit
+exit
+
+Script done on 2026-07-06 23:58:38+00:00 [COMMAND_EXIT_CODE="0"]

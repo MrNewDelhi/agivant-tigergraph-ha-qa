@@ -1,0 +1,50 @@
++--------------------+-------------------------+-------------------------+-------------------------+
+|    Service Name    |     Service Status      |      Process State      |       Process ID        |
++--------------------+-------------------------+-------------------------+-------------------------+
+|      ADMIN#1       |         Online          |         Running         |          1073           |
+|      ADMIN#2       |         Online          |         Running         |          1151           |
+|      ADMIN#3       |         Online          |         Running         |          1150           |
+|       CTRL#1       |         Online          |         Running         |          1868           |
+|       CTRL#2       |         Online          |         Running         |          1884           |
+|       CTRL#3       |         Online          |         Running         |          1968           |
+|       DICT#1       |         Online          |         Running         |          2061           |
+|       DICT#2       |         Online          |         Running         |          2133           |
+|       DICT#3       |         Online          |         Running         |          2133           |
+|       ETCD#1       |         Online          |         Running         |          2060           |
+|       ETCD#2       |         Online          |         Running         |          2129           |
+|       ETCD#3       |         Online          |         Running         |          2128           |
+|       EXE_1        |         Online          |         Running         |          1056           |
+|       EXE_2        |         Online          |         Running         |          1132           |
+|       EXE_3        |         Online          |         Running         |          1135           |
+|      GPE_1#1       |         Online          |         Running         |          20287          |
+|      GPE_1#2       |         Online          |         Running         |          10422          |
+|      GSE_1#1       |         Online          |         Running         |          20273          |
+|      GSE_1#2       |         Online          |         Running         |          10408          |
+|       GSQL#1       |         Online          |         Running         |          20314          |
+|       GSQL#2       |         Online          |         Running         |          10477          |
+|       GSQL#3       |         Online          |         Running         |          3929           |
+|       GUI#1        |         Online          |         Running         |          4410           |
+|       GUI#2        |         Online          |         Running         |          4003           |
+|       GUI#3        |         Online          |         Running         |          3957           |
+|       IFM#1        |         Online          |         Running         |          4400           |
+|       IFM#2        |         Online          |         Running         |          3988           |
+|       IFM#3        |         Online          |         Running         |          3944           |
+|      KAFKA#1       |         Online          |         Running         |          18776          |
+|      KAFKA#2       |         Online          |         Running         |          8916           |
+|      KAFKA#3       |         Online          |         Running         |          2204           |
+|    KAFKACONN#1     |         Online          |         Running         |          20295          |
+|    KAFKACONN#2     |         Online          |         Running         |          10433          |
+|    KAFKACONN#3     |         Online          |         Running         |          1151           |
+|   KAFKASTRM-LL_1   |         Online          |         Running         |          1072           |
+|   KAFKASTRM-LL_2   |         Online          |         Running         |          1152           |
+|   KAFKASTRM-LL_3   |         Online          |         Running         |          1153           |
+|      NGINX#1       |         Online          |         Running         |          4369           |
+|      NGINX#2       |         Online          |         Running         |          3957           |
+|      NGINX#3       |         Online          |         Running         |          3912           |
+|      RESTPP#1      |         Online          |         Running         |          18605          |
+|      RESTPP#2      |         Online          |         Running         |          8748           |
+|      RESTPP#3      |         Online          |         Running         |          3914           |
+|        ZK#1        |         Online          |         Running         |          1915           |
+|        ZK#2        |         Online          |         Running         |          2000           |
+|        ZK#3        |         Online          |         Running         |          2009           |
++--------------------+-------------------------+-------------------------+-------------------------+

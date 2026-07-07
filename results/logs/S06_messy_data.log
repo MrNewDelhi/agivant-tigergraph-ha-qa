@@ -1,0 +1,27 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.9.6, pytest-8.4.2, pluggy-1.6.0 -- /Library/Developer/CommandLineTools/usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/anmol/dev/agivant-qa-assignment
+configfile: pytest.ini
+collecting ... collected 12 items
+
+tests/test_messy_data.py::TestMessyStrings::test_MD01_unicode_emoji_round_trip PASSED [  8%]
+tests/test_messy_data.py::TestMessyStrings::test_MD02_special_chars_no_injection PASSED [ 16%]
+tests/test_messy_data.py::TestMessyStrings::test_MD08_empty_string_value PASSED [ 25%]
+tests/test_messy_data.py::TestMessyStrings::test_MD09_whitespace_only_preserved PASSED [ 33%]
+tests/test_messy_data.py::TestMessyStrings::test_MD10_long_string_500_chars PASSED [ 41%]
+tests/test_messy_data.py::TestMessyNumerics::test_MD03_very_large_balance PASSED [ 50%]
+tests/test_messy_data.py::TestMessyNumerics::test_MD04_negative_balance PASSED [ 58%]
+tests/test_messy_data.py::TestMessyNumerics::test_MD05_zero_balance PASSED [ 66%]
+tests/test_messy_data.py::TestMessyNumerics::test_MD06_very_small_balance PASSED [ 75%]
+tests/test_messy_data.py::TestMessyNumerics::test_MD07_duplicate_primary_id_dedups_last_wins PASSED [ 83%]
+tests/test_messy_data.py::TestLargerData::test_MD11_bulk_insert_5000_vertices PASSED [ 91%]
+tests/test_messy_data.py::TestLargerData::test_MD12_bulk_value_integrity PASSED [100%]
+
+=============================== warnings summary ===============================
+../../Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35
+  /Users/anmol/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 12 passed, 1 warning in 12.00s ========================

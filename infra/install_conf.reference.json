@@ -1,0 +1,29 @@
+{
+  "___COMMENT___": [
+    "REFERENCE template for TigerGraph 4.1.4 non-interactive install (sudo ./install.sh -n).",
+    "Field names can vary slightly by build — if `-n` rejects this, use the INTERACTIVE installer",
+    "(sudo ./install.sh) which asks the same questions. See infra/INSTALL.md.",
+    "Replace the INTERNAL IPs with the ones printed by setup-gcp.sh.",
+    "ReplicationFactor=2 (minimum for HA) with 3 nodes: data replicates to 2 of the 3 nodes."
+  ],
+  "BasicConfig": {
+    "TigerGraph": {
+      "Username": "tigergraph",
+      "Password": "tigergraph",
+      "SSHPort": 22
+    }
+  },
+  "RootDir": {
+    "AppRoot": "/home/tigergraph/tigergraph/app",
+    "DataRoot": "/home/tigergraph/tigergraph/data",
+    "LogRoot": "/home/tigergraph/tigergraph/log",
+    "TempRoot": "/home/tigergraph/tigergraph/tmp"
+  },
+  "NodeList": [
+    { "Hostname": "m1", "HostIP": "10.128.0.2" },
+    { "Hostname": "m2", "HostIP": "10.128.0.3" },
+    { "Hostname": "m3", "HostIP": "10.128.0.4" }
+  ],
+  "ReplicationFactor": 3,
+  "License": "PASTE_YOUR_ENTERPRISE_FREE_LICENSE_KEY_HERE"
+}

@@ -1,0 +1,13 @@
+NAME   STATUS
+tg-m1  RUNNING
+tg-m2  TERMINATED
+tg-m3  TERMINATED
+write 1 -> 
+write 2 -> 
+write 3 -> 
+read 1 -> 000
+read 2 -> 000
+read 3 -> 000
+read 4 -> 000
+read 5 -> 000
+read 6 -> 000

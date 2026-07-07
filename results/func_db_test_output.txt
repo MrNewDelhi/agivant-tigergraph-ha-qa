@@ -1,0 +1,67 @@
+
+=== SETUP — controlled fixture with known values ===
+
+=== FUNCTIONAL TESTS — does the database work as intended under normal conditions? ===
+[PASS] FT1  create vertex — accepted count
+        expected = 1
+        actual   = 1
+[PASS] FT2  read-back returns correct attribute value
+        expected = 500.0
+        actual   = 500
+[PASS] FT3  update-in-place (not a duplicate) — new value
+        expected = 750.25
+        actual   = 750.25
+[PASS] FT4  create edge — accepted count
+        expected = 1
+        actual   = 1
+[PASS] FT5  out-edge count after 1 insert
+        expected = 1
+        actual   = 1
+[PASS] FT6  upsert dedup — still 1 edge (no duplicate)
+        expected = 1
+        actual   = 1
+[PASS] FT7  delete vertex → no longer readable
+        expected = None
+        actual   = None
+[PASS] FT8  installed query getAccount(acc0) returns acc0
+        expected = 'acc0'
+        actual   = 'acc0'
+[PASS] FT9  k-hop traversal deterministic (run twice)
+        expected = 42
+        actual   = 42
+[PASS] FT10 aggregation — COUNT over fixture
+        expected = 3
+        actual   = 3
+[PASS] FT11 aggregation — SUM(balance) over fixture
+        expected = 6000.5
+        actual   = 6000.5
+[PASS] FT12 filtering — COUNT(balance>1500) in fixture
+        expected = 2
+        actual   = 2
+
+=== DATABASE TESTS — data correctness across reads, writes, types, structure ===
+[PASS] DT1  read-after-write consistency (immediate)
+        expected = 111.11
+        actual   = 111.11
+[PASS] DT2  query-result determinism (3 identical runs)
+        expected = ['acc5', 'acc5', 'acc5']
+        actual   = ['acc5', 'acc5', 'acc5']
+[PASS] DT3  double-precision round-trip (no truncation)
+        expected = 123.456789
+        actual   = 123.456789
+[PASS] DT4  edge attribute (amount) round-trip
+        expected = [987.65]
+        actual   = [987.65]
+[PASS] DT5  referential integrity — edge target vertex exists
+        expected = True
+        actual   = True
+[PASS] DT6  controlled out-edge count is exact
+        expected = 1
+        actual   = 1
+[PASS] DT7  missing vertex → clean error (error flag true)
+        expected = True
+        actual   = True
+
+=== SUMMARY:  19 passed, 0 failed   (total 19) ===
+
+SUMMARY: 19 passed, 0 failed

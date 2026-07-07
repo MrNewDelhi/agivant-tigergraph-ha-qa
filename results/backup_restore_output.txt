@@ -1,0 +1,40 @@
+############ DB TEST: Backup & Restore ############
+State at backup time: backup_marker_before = 111 (in backup 'qatest')
+
+== 1. MODIFY data after the backup ==
+  changed backup_marker_before -> 999
+  inserted backup_marker_after -> 222 (did NOT exist at backup time)
+  current values:
+    before = 999
+    after  = 222
+
+== 2. RESTORE backup 'qatest' (disruptive — restarts services) ==
+[   Info] [Mon Jul  6 16:49:25 UTC 2026] Stopping GPE, GSE, RESTPP, and GSQL...
+[   Info] [Mon Jul  6 16:49:48 UTC 2026] Backing up current GPE & GSE data...
+[   Info] [Mon Jul  6 16:49:48 UTC 2026] Extracting GPE & GSE data...
+[   Info] [Mon Jul  6 16:49:49 UTC 2026] Replace Gstore successfully. you can remove manually the path /home/tigergraph/tigergraph/data/gstore_memo-20260706164948 after the restore is finished.
+[   Info] [Mon Jul  6 16:49:49 UTC 2026] Resetting GPE & GSE
+[   Info] [Mon Jul  6 16:50:22 UTC 2026] Write back full backup's watermarks
+[   Info] [Mon Jul  6 16:50:51 UTC 2026] Restore GPE & GSE successfully.
+[   Info] [Mon Jul  6 16:51:06 UTC 2026] Importing GUI data... (async)
+[   Info] [Mon Jul  6 16:51:06 UTC 2026] Extracting GUI#1 data...
+[   Info] [Mon Jul  6 16:51:06 UTC 2026] Importing GSQL data... (async)
+[   Info] [Mon Jul  6 16:51:06 UTC 2026] Extracting GSQL data...
+[   Info] [Mon Jul  6 16:51:06 UTC 2026] GUI imported
+[   Info] [Mon Jul  6 16:51:11 UTC 2026] GSQL imported
+[   Info] [Mon Jul  6 16:51:11 UTC 2026] Resetting GSQL & KAFKACONN
+[   Info] [Mon Jul  6 16:51:34 UTC 2026] Starting services
+[   Info] [Mon Jul  6 16:52:02 UTC 2026] Restore completes
+[   Info] [Mon Jul  6 16:52:02 UTC 2026] Clean staging directory: /home/tigergraph/tigergraph/data/backup_staging_dir/restore/qatest
+[   Info] [Mon Jul  6 16:52:02 UTC 2026] Clean staging directory /home/tigergraph/tigergraph/data/backup_staging_dir/restore/qatest successfully
+=== ensure services up after restore ===
+SERVICES_UP
+
+== 3. VERIFY data reverted to backup state ==
+  backup_marker_before = 111   (expected 111 — reverted from 999)
+  backup_marker_after  = GONE    (expected GONE — was added after backup)
+  [PASS] pre-backup change reverted to 111
+  [PASS] post-backup insert removed by restore
+  [PASS] original graph intact: acc0 = acc0
+
+RESULT: backup captured a point-in-time state; restore reverted the database to it exactly.

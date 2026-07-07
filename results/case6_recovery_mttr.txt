@@ -1,0 +1,33 @@
+Case 6 — Recovery / MTTR (synthesis)
+====================================
+Case 6 is not a separate injected-failure test; it collects the recovery timings
+observed live during Cases 1–5. Each number below cites the case + evidence file
+it was measured from, so it is fully traceable. MTTR is defined as time from the
+failure/restore action to STABLE service (≥5 consecutive successful probes, or the
+service reporting Online and serving).
+
+Recovery type              | Trigger (source case)            | Measured MTTR            | Traces to
+---------------------------+----------------------------------+--------------------------+-------------------------------
+Non-data node loss (read)  | m3 crash / power-off (Case 1a/b) | 0 s — transparent        | results/case1a_gpe_kill.csv,
+                           |                                  |                          | results/case1b_m3_poweroff.csv
+Data-replica reroute (read)| GPE crash on m2 (Case 1c)        | ~18–21 s (retry-maskable)| results/case1c_gpe_kill_m2.csv
+GSQL leader (control plane)| leader GSQL killed (Case 2)      | ~58 s to new-leader ready| results/case2_gsql_leader.csv
+                           |                                  |                          | + GSQL GsqlHAHandler logs
+Control-plane un-block     | node restored (Case 3)           | heal ~32 s, then         | results/case3_control_plane.txt
+                           |                                  | INSTALL completes ~54 s  |
+Quorum restoration         | 2 nodes back (Case 4)            | reads back ~49 s         | results/case4_quorum.csv
+                           |                                  | (+ ~40 s VM boot)        |
+Data-replica rejoin+catchup| m2 back (Case 5)                 | replica online ~18 s,    | results/case5_writes.csv
+                           |                                  | synced to exact match    | + gstatusgraph (m1==m2)
+
+Notes
+-----
+- Three distinct recovery classes are worth separating: (a) service/reroute MTTR
+  (seconds), (b) redundancy/catch-up MTTR (the rejoined replica re-syncing), and
+  (c) quorum-restoration MTTR (bringing the cluster back from a quorum loss).
+- Full VM power-off adds ~30–40 s of guest boot before services can start.
+- On GCP the TigerGraph services required a manual `gadmin start all` after a
+  reboot (no systemd auto-start configured). Enabling auto-start would remove that
+  manual step and shrink operator-visible MTTR.
+
+See docs/REPORT.md §4, Case 6 for the write-up.

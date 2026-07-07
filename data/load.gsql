@@ -1,0 +1,25 @@
+// Loading job for finGraph. Edit the file paths in RUN LOADING JOB to where you copied the CSVs.
+// Run:  gsql data/load.gsql
+// Verify counts after:  gsql -g finGraph "SELECT count() FROM Account"   (or `gstatusgraph`)
+
+USE GRAPH finGraph
+
+BEGIN
+CREATE LOADING JOB load_fin FOR GRAPH finGraph {
+  DEFINE FILENAME f_persons;
+  DEFINE FILENAME f_accounts;
+  DEFINE FILENAME f_owns;
+  DEFINE FILENAME f_transfers;
+
+  LOAD f_persons   TO VERTEX Person  VALUES($0, $1);
+  LOAD f_accounts  TO VERTEX Account VALUES($0, $1);
+  LOAD f_owns      TO EDGE   OWNS     VALUES($0, $1);
+  LOAD f_transfers TO EDGE   TRANSFER VALUES($0, $1, $2);
+}
+END
+
+RUN LOADING JOB load_fin USING
+  f_persons="/home/tigergraph/data/persons.csv",
+  f_accounts="/home/tigergraph/data/accounts.csv",
+  f_owns="/home/tigergraph/data/owns.csv",
+  f_transfers="/home/tigergraph/data/transfers.csv"

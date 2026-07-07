@@ -1,0 +1,35 @@
+############ DB TEST: Consistency after node failure + recovery ############
+Date: Mon Jul  6 22:09:08 IST 2026
+
+== 1. Load known fixture (50 vertices, balances 0..490 sum=12250; 49 chained edges) ==
+LOADED 50 vertices (sum should be 12250.0), 49 edges
+
+== 2. Verify fixture correct BEFORE failure ==
+[PASS] all 50 vertices present after recovery — got 50
+[PASS] balance sum intact — expected 12250.0, got 12250
+[PASS] every vertex has its exact original value (no corruption)
+[PASS] edge structure intact — rec0 out-edges expected 1, got 1
+
+== 3. Kill data node m2 (full power-off) ==
+22:10:03 stopping m2...
+22:11:07 m2 DOWN. Verify data still intact from surviving replica (m1):
+[PASS] all 50 vertices present after recovery — got 50
+[PASS] balance sum intact — expected 12250.0, got 12250
+[PASS] every vertex has its exact original value (no corruption)
+[PASS] edge structure intact — rec0 out-edges expected 1, got 1
+
+== 4. Recover m2, heal, let replica rejoin ==
+HEALED
+
+== 5. Verify consistency AFTER recovery (exact values, no loss/corruption) ==
+[PASS] all 50 vertices present after recovery — got 50
+[PASS] balance sum intact — expected 12250.0, got 12250
+[PASS] every vertex has its exact original value (no corruption)
+[PASS] edge structure intact — rec0 out-edges expected 1, got 1
+
+== 6. Cross-replica consistency — m1 vs m2 must be byte-identical ==
+[m1     ] Partition size: 8.7MiB, IDS size: 1.1MiB, Vertex count: 70051, Edge count: 601985, NumOfDeletedVertices: 12 NumOfSkippedVertices: 0
+[m2     ] Partition size: 8.7MiB, IDS size: 1.1MiB, Vertex count: 70051, Edge count: 601985, NumOfDeletedVertices: 12 NumOfSkippedVertices: 0
+[m3     ] Partition size: 0B, IDS size: 0B, Vertex count: 0, Edge count: 0, NumOfDeletedVertices: 0 NumOfSkippedVertices: 0
+
+RESULT: data survived a full data-node failure + recovery with exact values and identical replicas.

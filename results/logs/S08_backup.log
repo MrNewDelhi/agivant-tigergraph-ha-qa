@@ -1,0 +1,12 @@
+# Backup evidence (regenerated live) — full create/list in S08_backup_restore.png, 999->111 revert in S08b_restore_verified.png
+$ gadmin backup list
++------------------------------+------+---------+--------+----------------------+
+| [96m            TAG             [0m | [96mTYPE[0m | [96mVERSION[0m | [96m SIZE [0m | [96m     CREATED AT     [0m |
++------------------------------+------+---------+--------+----------------------+
+| [93mqatest[0m                       | [92mFULL[0m | [92m4.1.4[0m   | [92m7.3 MB[0m | [92m2026-07-06T16:47:59Z[0m |
+| [93mcaptest[0m                      | [92mFULL[0m | [92m4.1.4[0m   | [92m7.3 MB[0m | [92m2026-07-06T20:33:03Z[0m |
+| [93mcaptest_step9_20260706225114[0m | [92mFULL[0m | [92m4.1.4[0m   | [92m7.3 MB[0m | [92m2026-07-06T22:51:14Z[0m |
++------------------------------+------+---------+--------+----------------------+
+
+$ current cap_marker (post-restore state = 111)
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"v_id":"cap_marker","v_type":"Account","attributes":{"id":"cap_marker","balance":111}}]}

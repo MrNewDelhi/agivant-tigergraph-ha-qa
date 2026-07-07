@@ -1,0 +1,9 @@
+LOADED 50 vertices (sum should be 12250.0), 49 edges
+[PASS] all 50 vertices present after recovery — got 50
+[PASS] balance sum intact — expected 12250.0, got 12250
+[PASS] every vertex has its exact original value (no corruption)
+[PASS] edge structure intact — rec0 out-edges expected 1, got 1
+[PASS] all 50 vertices present after recovery — got 50
+[PASS] balance sum intact — expected 12250.0, got 12250
+[PASS] every vertex has its exact original value (no corruption)
+[PASS] edge structure intact — rec0 out-edges expected 1, got 1
